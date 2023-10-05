@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Static Banner with Video</title>
+    <script>
+        setTimeout(function(){
+            var video_kadr = document.getElementById("video_kadr");
+            video.play();
+            video_kadr.style.visibility = 'visible';
+        },0);
+    </script>
+</head>
+<link rel="stylesheet" href="style.css">
+<body onload="VideoShow();">
+    <!-- <div id="ppbtn"></div>
+    <div id="volbtn"></div> -->
+    <a href="%clickurl_1%" target="_blank">
+        <div id="container">
+            <div id="banner">
+                <!-- <img class="txt"  src="./img/txt.svg" alt="" srcset="">
+                <img class="man"  src="./img/man.png" alt="" srcset="">
+                <div id='video_kadr'>
+                    <video id="video" muted></video>
+                </div> -->
+            </div>
+        </div>
+    </a>
+    <script>
+        var myVideo = document.getElementById("video");
+        var ppbtn = document.getElementById("ppbtn");
+        var volbtn = document.getElementById("volbtn");
+        var animation_container = document.getElementById("animation_container");
+        ppbtn.addEventListener("click", playPause);
+        volbtn.addEventListener("click", volStatus);
+        myVideo.addEventListener("click", stopVideo);
+        document.getElementById("video").src = "video.mp4";
+        function stopVideo() {
+            video.pause();
+            ppbtn.style.backgroundPosition = "0% 0%";
+        }
+        function VideoShow(){
+            document.getElementById('video_kadr').style.display = 'block';
+            video_kadr.style.visibility = 'visible';
+            video.play();
+        }
+        function playPause() {
+            if (video.paused) {video.play();   ppbtn.style.backgroundPosition = "0% 100%";}
+            else {video.pause(); ppbtn.style.backgroundPosition = "0% 0%";}
+        }
+        function volStatus() {
+            if (video.muted) {video.muted = false; volbtn.style.backgroundPosition = "100% 200%";} 
+            else {video.muted = true; volbtn.style.backgroundPosition = "100% 100%";}
+        }
+    </script>
+    <script type='text/javascript'>
+        document.getElementById('video').addEventListener('ended', function(e) {ppbtn.style.backgroundPosition = "0% 0%";myVideo.pause();})
+    </script>
+    <script type="text/javascript" data-placement=""
+      data-pixel="https://ad.adriver.ru/cgi-bin/rle.cgi?sid=1&bt=55&ad=769554&pid=3774308&bid=9488304&bn=9488304&exss=&rnd=159796820"
+      src="https://content.adriver.ru/banners/0005728/0005728997/0/AV_pixel.js">
+    </script>
+</body>
+</html>
